@@ -36,6 +36,71 @@ Interfaz: una interfaz es un tipo de referencia, similar a una clase, que puede 
 Quique
 Type erasuse consiste en que en tiempo de ejecución se pierde la información de los tipos genéricos y para la máquina virtual no son distintos de un tipo no genérico, es un proceso que realiza el compilador. 
 
+JuliusCMM
+# TYPE ERASURE
+Los genéricos se introdujeron en Java para proporcionar control de tipo más estricto durante la compilación y para dar cabida a la programación de tipos genéricos.
+Para implementar genéricos, el compilador de Java aplica el TYPE ERASURE de la siguiente forma:
+
+	1. Reemplaza todos los parámetros genéricos delimitados (bounded generics) como "T extends Comparable<T>>" por su propio límite.
+		public class Node<T extends Comparable<T>> {
+			private T data;
+			private Node<T> next;
+
+			public Node(T data, Node<T> next) {
+				this.data = data;
+				this.next = next;
+			}
+			public T getData() { return data; }
+			// ...
+		}
+		
+		queda tras el TYPE ERASURE como:
+		
+		public class Node {
+			private Comparable data;
+			private Node next;
+
+			public Node(Comparable data, Node next) {
+				this.data = data;
+				this.next = next;
+			}
+			public Comparable getData() { return data; }
+			// ...
+		}
+	1. Reemplaza todos los parámetro genéricos no delimitados (bounded generics) como "T, E, K, V" por Object (base de la jerarquía de objetos en java).
+		public class Node<T> {
+			private T data;
+			private Node<T> next;
+
+			public Node(T data, Node<T> next) {
+				this.data = data;
+				this.next = next;
+			}
+
+			public T getData() { return data; }
+			// ...
+		}
+		
+		queda tras el TYPE ERASURE como:
+		
+		public class Node {
+			private Object data;
+			private Node next;
+
+			public Node(Object data, Node next) {
+				this.data = data;
+				this.next = next;
+			}
+
+			public Object getData() { return data; }
+			// ...
+		}
+	1. Inserta conversión explícita de tipos (cast) si se necesita preservar la seguridad de tipos.
+	1. Inserta métodos puente (bridge methods) que son métodos sintéticos generados por el compilador con el objetivo de preservar el polimorfismo en tipos genéricos extendidos.
+
+El borrado de tipos garantiza que no se creen nuevas clases para tipos parametrizados; en consecuencia, los genéricos no incurren en gastos extra durante el tiempo de ejecución.
+El bytecode(*.class) producido, por lo tanto, contiene solo clases ordinarias, interfaces y métodos.
+------------------------------------------------------------------------------------------------------------------------------------
 
 
 
