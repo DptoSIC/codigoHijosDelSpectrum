@@ -33,6 +33,8 @@ Interfaz: una interfaz es un tipo de referencia, similar a una clase, que puede 
 1. ¿Qué relación tiene el concepto "erasure" con la definición de clase:
 `class MiClase implements Comparable<String>, Comparable<Integer> {...}`? Explícalo.
 
+Quique
+Type erasuse consiste en que en tiempo de ejecución se pierde la información de los tipos genéricos y para la máquina virtual no son distintos de un tipo no genérico, es un proceso que realiza el compilador. 
 
 
 
