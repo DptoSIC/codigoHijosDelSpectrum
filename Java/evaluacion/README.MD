@@ -14,7 +14,7 @@ foo = bar. Operador de asignación =. Acceso al mismo objeto mediante distintas 
 foo == bar. Operador de igualdad == (ser el mismo). La comparación se hará entre foo y bar (dos variables) y se dirá que es verdadero si apuntan al mismo objeto y sino devolverá falso.  
 
 
-foo.equals(bar). Metodo equals (Object obj), debe tener una lógica implementada y nos devolverá true sólo si el contenido que hemos definido relevante es el mismo.  
+foo.equals(bar). Metodo equals (Object obj). Compara dos objetos y decide si son iguales, devolviendo true en caso afirmativo y false en caso contrario. Hay que decidir qué significa que bar y foo sean iguales.   
 
 1. Diferencias entre una clase normal, una abstracta y una interfaz.
 1. ¿Qué relación tiene el concepto "erasure" con la definición de clase:
