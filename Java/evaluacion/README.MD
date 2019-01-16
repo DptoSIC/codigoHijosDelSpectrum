@@ -38,11 +38,11 @@ Type erasuse consiste en que en tiempo de ejecución se pierde la información d
 
 JuliusCMM
 # TYPE ERASURE
-Los genéricos se introdujeron en Java para proporcionar control de tipo más estricto durante la compilación y para dar cabida a la programación de tipos genéricos.
+Los genéricos se introdujeron en Java para proporcionar **control de tipo más estricto** durante la compilación y para dar cabida a la **programación de tipos genéricos**.
 Para implementar genéricos, el compilador de Java aplica el TYPE ERASURE de la siguiente forma:
 
-	1. Reemplaza todos los parámetros genéricos delimitados (bounded generics) como "T extends Comparable<T>>" por su propio límite.
-		public class Node<T extends Comparable<T>> {
+1. Reemplaza todos los parámetros genéricos delimitados (**bounded generics**) como "T extends Comparable<T>>" por su propio límite.
+**		public class Node<T extends Comparable<T>> {
 			private T data;
 			private Node<T> next;
 
@@ -66,9 +66,9 @@ Para implementar genéricos, el compilador de Java aplica el TYPE ERASURE de la 
 			}
 			public Comparable getData() { return data; }
 			// ...
-		}
-	2. Reemplaza todos los parámetro genéricos no delimitados (bounded generics) como "T, E, K, V" por Object (base de la jerarquía de objetos en java).
-		public class Node<T> {
+		} **
+2. Reemplaza todos los parámetro genéricos no delimitados (**unbounded generics**) como "T, E, K, V" por Object (base de la jerarquía de objetos en java).
+**		public class Node<T> {
 			private T data;
 			private Node<T> next;
 
@@ -94,13 +94,11 @@ Para implementar genéricos, el compilador de Java aplica el TYPE ERASURE de la 
 
 			public Object getData() { return data; }
 			// ...
-		}
-	3. Inserta conversión explícita de tipos (cast) si se necesita preservar la seguridad de tipos.
-	4. Inserta métodos puente (bridge methods) que son métodos sintéticos generados por el compilador con el objetivo de preservar el polimorfismo en tipos genéricos extendidos.
-
-El borrado de tipos garantiza que no se creen nuevas clases para tipos parametrizados; en consecuencia, los genéricos no incurren en gastos extra durante el tiempo de ejecución.
-El bytecode(*.class) producido, por lo tanto, contiene solo clases ordinarias, interfaces y métodos.
-------------------------------------------------------------------------------------------------------------------------------------
+		} **
+3. Inserta conversión explícita de tipos (**cast**) si se necesita preservar la seguridad de tipos.
+4. Inserta métodos puente (**bridge methods**) que son métodos sintéticos generados por el compilador con el objetivo de preservar el polimorfismo en tipos genéricos extendidos.
++ El borrado de tipos garantiza que no se creen nuevas clases para tipos parametrizados; en consecuencia, los genéricos no incurren en gastos extra durante el tiempo de ejecución.
++ El bytecode(ficheros class) producido, por lo tanto, contiene solo clases ordinarias, interfaces y métodos.
 
 
 
