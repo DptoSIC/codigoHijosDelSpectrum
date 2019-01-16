@@ -67,7 +67,7 @@ Para implementar genéricos, el compilador de Java aplica el TYPE ERASURE de la 
 			public Comparable getData() { return data; }
 			// ...
 		}
-	1. Reemplaza todos los parámetro genéricos no delimitados (bounded generics) como "T, E, K, V" por Object (base de la jerarquía de objetos en java).
+	2. Reemplaza todos los parámetro genéricos no delimitados (bounded generics) como "T, E, K, V" por Object (base de la jerarquía de objetos en java).
 		public class Node<T> {
 			private T data;
 			private Node<T> next;
@@ -95,8 +95,8 @@ Para implementar genéricos, el compilador de Java aplica el TYPE ERASURE de la 
 			public Object getData() { return data; }
 			// ...
 		}
-	1. Inserta conversión explícita de tipos (cast) si se necesita preservar la seguridad de tipos.
-	1. Inserta métodos puente (bridge methods) que son métodos sintéticos generados por el compilador con el objetivo de preservar el polimorfismo en tipos genéricos extendidos.
+	3. Inserta conversión explícita de tipos (cast) si se necesita preservar la seguridad de tipos.
+	4. Inserta métodos puente (bridge methods) que son métodos sintéticos generados por el compilador con el objetivo de preservar el polimorfismo en tipos genéricos extendidos.
 
 El borrado de tipos garantiza que no se creen nuevas clases para tipos parametrizados; en consecuencia, los genéricos no incurren en gastos extra durante el tiempo de ejecución.
 El bytecode(*.class) producido, por lo tanto, contiene solo clases ordinarias, interfaces y métodos.
