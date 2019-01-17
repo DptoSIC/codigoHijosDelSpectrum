@@ -4,8 +4,9 @@ En este apartado se agrupan distintas evaluaciones para comprobar tus conocimien
 Para evaluaciones prácticas mira en los distintos exámenes (pondré el de esta semana cuando haya acabado el exámen).
 
 Para teoría pueden servirte de repaso las siguientes preguntas:
-1. Diferencias al comparar entre `foo = bar`, `foo == bar` y `foo.equals(bar)`
-'foo=bar ' ; se utiliza el operador de Asignación "=" . Se esta dando a foo el valor de bar;
+1. Diferencias al comparar entre usar los operadores `foo = bar`, `foo == bar` y el método `foo.equals(bar)`
+
+   'foo=bar ' ; se utiliza el operador de Asignación "=" . Se esta dando a foo el valor de bar;
 'foo ==bar' ; Se utiliza el operador binario de comparación "==" : igual que, cuyo resultado es un boolean. Devolverá true cuando sus dos variable operandos apunten al mismo objeto/valor.
 'foo.equals (bar)'; Se utiliza el método "equals" que bebe tener una lógica implementada. Devolverá true solo si el contenido que hemos definido como relevante en "foo" es el mismo que en "bar".
 
@@ -18,7 +19,7 @@ foo == bar. Operador de igualdad == (ser el mismo). La comparación se hará ent
 
 foo.equals(bar). Metodo equals (Object obj). Compara dos objetos y decide si son iguales, devolviendo true en caso afirmativo y false en caso contrario. Hay que decidir qué significa que bar y foo sean iguales.   
 
-1. Diferencias entre una clase normal, una abstracta y una interfaz.
+1. **Diferencias** entre una clase normal, una abstracta y una interfaz.
 
 RaulG.
 
@@ -30,7 +31,7 @@ Si una clase incluye métodos abstractos, entonces la clase misma debe ser decla
 
 Interfaz: una interfaz es un tipo de referencia, similar a una clase, que puede contener solo constantes, firmas de métodos, métodos predeterminados, métodos estáticos y tipos anidados. Los cuerpos de método existen solo para métodos predeterminados y métodos estáticos. Las interfaces no pueden ser instanciadas, solo pueden implementarse por clases o extenderse por otras interfaces.
 
-1. ¿Qué relación tiene el concepto "erasure" con la definición de clase:
+1. ¿Qué **relación** tiene el concepto "erasure" con la definición de clase:
 `class MiClase implements Comparable<String>, Comparable<Integer> {...}`? Explícalo.
 
 Quique
