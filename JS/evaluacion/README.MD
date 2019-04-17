@@ -1,7 +1,9 @@
 # Evaluación
 En este apartado se agrupan distintas evaluaciones para comprobar tus conocimientos.
 
-Para evaluaciones prácticas mira en los distintos exámenes.
+Para evaluaciones prácticas mira en los distintos exámenes:
+1. [TragaperraJS](https://github.com/Awes0meM4n/tragaperrajs#tragaperrajs): crea tu máquina tragaperras con JS
+1. [EJStudia](https://github.com/Awes0meM4n/EJStudia#examen-javascript---ejstudia): minijuego para concienciar del éxito del estudio constante
 
 Para teoría pueden servirte de repaso las siguientes preguntas:
 1. Definición de Javascript (JS) y sus características
